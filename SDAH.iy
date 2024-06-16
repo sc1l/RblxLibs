@@ -1,0 +1,19 @@
+local Plugin = {
+	["PluginName"] = "Slide Down A Hill",
+	["PluginDescription"] = "Adds function for slide down a hill.",
+	["Commands"] = {
+		["RemoveObstacles"] = {
+			["ListName"] = "RemoveObstacles / ro",
+			["Description"] = "Removes obstacles of game (slide down a hill only, lagging)",
+			["Aliases"] = { "ro" },
+			["Function"] = function(args, speaker)
+                local obstacles = game.Workspace.Slide.Obstacles:GetChildren()
+                for _, obstacle in ipairs(obstacles) do
+                    obstacle:Destroy()
+                end
+			end,
+		},
+	},
+}
+
+return Plugin
